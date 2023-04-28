@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link href="style.css" rel="stylesheet" />
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <section class="backgroundbodypartion">
+    <section class="section1">
+                    <section id="cardfront">
+                        
+                      <div class="circles">
+                        <div class="bigcircle"></div>
+                        <div class="smallcircle" ></div>
+                      </div>
+                
+                      
+                      <div class="bottomrow">
+                            
+                          <div class ="cardnumber">
+                            <input type="text" size="4" name="mirrornumber" id="mirrornumber" placeholder="0000" maxlength="3" readonly>
+                            
+                            <input type="text" size="4" name="mirrornumber1" id="mirrornumber1"placeholder="0000"minlength="3" maxlength="3"  readonly>
+                            
+                            <input type="text" size="4"name="mirrornumber2" id="mirrornumber2" placeholder="0000"minlength="3" maxlength="3" readonly>
+                            <input type="text"size="4"  name="mirrornumber3" id="mirrornumber3" placeholder="0000"minlength="3" maxlength="3" readonly>
+                        </div>
+                
+                
+                        <div class="nameexpdate">
+                        <input type="text" placeholder="Jane Appleseed" class="namemirror" id="namemirror" readonly>
+                        <div class="expdate">
+                          <div>
+                            <input type="text" size="2"id="expdatemonthmirror" placeholder="00"  readonly>
+                      
+                            </div>
+                            <div>/</div>
+                            <div>
+                            <input type="text" size="2"id="expdateyearmirror" placeholder="00"readonly>
+                      
+                            </div>
+                        </div>
+                              
+                        </div>
+                
+                </div>
+                
+                </section>
+  
+  
+            <section id="cardback">
+            
+            <div class="blackline">
+            </div>
+            
+            <div class="greyline">
+              <input type="text" size="3"id="cvcmirror" placeholder="000" readonly>
+            </div>
+            
+            </section>
+            
+   </section>
+  
+   
+   
+   
+               <section class="section2">
+                  <section>
+                            <form method="post">
+                                  <label for="cardholdername" >CARDHOLDER NAME</label ><br>
+                                  <input type ="text" name ="CARDHOLDERNAME" value="" placeholder="eg. Jane Appleseed" id ="cardholdername"><br>
+                                  
+                                  <label for="cardholdernumber">CARD NUMBER </label ><br>
+                                    <div class="containercardnumber">
+                                      <input type="text" size="4" placeholder="eg. 0000"name="cardnumber" id="cardnumber"  minlength="4" maxlength="4" ><br>
+                                      <input type="text" size="4" placeholder="0000" name="cardnumber1" id="cardnumber1"  minlength="4" maxlength="4" ><br>
+                                      <input type="text" size="4" placeholder="0000"name="cardnumber2" id="cardnumber2"  minlength="4" maxlength="4" ><br>
+                                      <input type="text" size="4" placeholder="0000" name="cardnumber3"id="cardnumber3"   minlength="4" maxlength="4" oninput.match(/.{1,4}/g)><br>
+                                    </div>
+                                  
+
+                                  <label for="Expdate">Exp .Date(MM/YY )  CVC</label ><br>
+                                  <input type="number" placeholder="MM" name="Expdate" id="expmonth" min="0" max="999">
+                                  <input type="number" placeholder="YY"  name="Expdate"id="expyear" min="0" max="999">
+                                  <input type="number" placeholder="eg.123"name="cvcnum" id="cvcnum" min="0" max="999"><br>
+                                  <input type="submit" id="confirmbutton"  value="Confirm">
+                            </form>
+                  </section> 
+                   
+                </section> 
+
+
+
+                  <section class="section3 displaynone" >
+                        <img src="images/rightimage.jpg" alt="done right image ">
+                        <p class="thankyou">THANK YOU!</p>
+                        <p class="addedmsg">We've added your card details </p>
+                        <button type="button" class="confirmbutton">Continue</button>
+
+
+
+                  </section>
+  
+  
+  
+
+  </section>
+ 
+  <script src="script.js" defer></script>
+
+
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>

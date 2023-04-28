@@ -1,0 +1,10 @@
+1)card validation ,someone can enter text instead of the num
+ 
+cvc validation ,someone can enter more than four digits 
+
+2)storing card value and taking in to account deletion by the user (medium)
+
+
+3)check how smalll grey lines in the backpart of the card is implemented 
+
+4)if i have used the backinage of he card then ho would i have created the input in that 
