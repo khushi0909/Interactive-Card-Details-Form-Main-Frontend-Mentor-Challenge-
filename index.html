@@ -81,28 +81,28 @@
    
                <section class="section2">
                   <section>
-                            <form method="post" class="form">
+                            <form method="post" class="form" action="">
                                   <label for="cardholdername" >CARDHOLDER NAME</label ><br>
-                                  <input type ="text" name ="CARDHOLDERNAME" value="" placeholder="eg. Jane Appleseed" id ="cardholdername"><br>
+                                  <input type ="text" name ="CARDHOLDERNAME" value="" placeholder="eg. Jane Appleseed" id ="cardholdername" required /><br>
                                   <p class="invalidname"></p>
                                   
                                   <label for="cardholdernumber">CARD NUMBER </label ><br>
                                     <div class="containercardnumber">
-                                      <input type="text" size="4" placeholder="eg. 0000"name="cardnumber" id="cardnumber"  minlength="4" maxlength="4" ><br>
-                                      <input type="text" size="4" placeholder="0000" name="cardnumber1" id="cardnumber1"  minlength="4" maxlength="4" ><br>
-                                      <input type="text" size="4" placeholder="0000"name="cardnumber2" id="cardnumber2"  minlength="4" maxlength="4" ><br>
-                                      <input type="text" size="4" placeholder="0000" name="cardnumber3"id="cardnumber3"   minlength="4" maxlength="4" oninput.match(/.{1,4}/g)><br>
+                                      <input type="text" size="4" placeholder="eg. 0000"name="cardnumber" id="cardnumber"  minlength="4" maxlength="4" required /><br>
+                                      <input type="text" size="4" placeholder="0000" name="cardnumber1" id="cardnumber1"  minlength="4" maxlength="4" required /><br>
+                                      <input type="text" size="4" placeholder="0000"name="cardnumber2" id="cardnumber2"  minlength="4" maxlength="4" required /><br>
+                                      <input type="text" size="4" placeholder="0000" name="cardnumber3"id="cardnumber3"   minlength="4" maxlength="4"  required /><br>
                                     </div>
                                     <p class="invalid"></p>
                                   
 
                                   <label for="Expdate">Exp .Date(MM/YY )  CVC</label ><br>
-                                  <input type="tel" placeholder="MM" name="Expdate" id="expmonth" size="3" min="10" max="12"  onKeyDown="if(this.value.length==2 && event.keyCode!=8) return false;">
-                                  <input type="tel" placeholder="YY"  name="Expdate"id="expyear" size="3"  min="00" max="99" onKeyDown="if(this.value.length==2 && event.keyCode!=8) return false;">
-                                  <input type="text" placeholder="eg.123"name="cvcnum" id="cvcnum"  minlength="3" maxlength="3"><br>
+                                  <input type="tel" placeholder="MM" name="Expdate" id="expmonth" size="3" min="10" max="12"  onKeyDown="if(this.value.length==2 && event.keyCode!=8) return false;" required />
+                                  <input type="text" placeholder="YY"  name="Expdate"id="expyear" size="3"  minlength="0" maxlength="3" required />
+                                  <input type="text" placeholder="eg.123"name="cvcnum" id="cvcnum" size="4"  minlength="3" maxlength="3" aria-required="true"><br>
                                   <p class="invaliddatecvc"></p>
 
-                                  <input type="submit" id="confirmbutton"  value="Confirm">
+                                  <input type="submit" id="confirmbutton"  value="Confirm"/>
                             </form>
                   </section> 
                    

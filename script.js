@@ -55,6 +55,8 @@ document.getElementById("cardholdername").oninput = () =>{
          case "cardoldername":
          checkNumber();
          break;
+         
+           
    }
 
  })
@@ -72,34 +74,46 @@ document.getElementById("cardholdername").oninput = () =>{
    let num3=cardnumber3.value
    let expmonthq = expmonth.value
    let expyearq = expyear.value
-   let cvcnumq = expyear.value
+   let cvcnumq = cvcnum.value
 let cardholdernameq = cardholdername.value
+// if((!num)|| (!num1)|| (!num2) || (!num3)|| !expmonthq || !expyearq || !cvcnumq || !cardholdernameq ){
+// {
+//    document.querySelector(".invaliddatecvc").innerHTML=" cant be blank ";
+//    document.querySelector(".invalid").innerHTML=" cant be blank ";
 
-      if(!isNumber(num)|| !isNumber(num1) || !isNumber(num2) || !isNumber(num3)){
+//    document.querySelector(".invalidname").innerHTML=" cant be blank ";
+// }
+//    // 
+// return true;
+
+// }
+
+if( !cardholdernameq || !isAlphabet(cardholdernameq)){
+
+   document.querySelector(".invalidname").innerText ="should contain alphabets only or \n cant be blank"
+    
+}
+     else  if(( !num)|| (!num1)|| (!num2) || (!num3) || !isNumber(num)|| !isNumber(num1) || !isNumber(num2) || !isNumber(num3)){
 
                {
 
-                     document.querySelector(".invalid").innerHTML="Wrong format ,Should contain only numbers ";
+                     document.querySelector(".invalid").innerText="Should contain only numbers \n  or cant be blank ";
 
                } 
                
-               return false;
+               // return false;
                }
-
-                        else if(!isNumber(expmonthq) || !isNumber(expyearq) || !isNumber(cvcnumq)){
+                        else if(!expmonthq || !expyearq || !cvcnumq || !isNumber(expmonthq) || !isNumber(expyearq) || !isNumber(cvcnumq)){
                         {
 
-                           document.querySelector(".invaliddatecvc").innerHTML="Wrong format ,Should contain only numbers ";
+                           document.querySelector(".invaliddatecvc").innerText="Should contain only numbers \n  or cant be blank ";
                            
 
                         }
-                        return false;
+                        // return false;
                         }
 
-                        else if(!isAlphabet(cardholdernameq)){
-
-                                 document.querySelector(".invalidname").innerHTML = "Wrong Format,should contain alphabets only "
-                        }
+                       
    
     else 
     {return true;}
@@ -133,7 +147,8 @@ let cardholdernameq = cardholdername.value
       
       function displayPreviousPage(e){
          document.querySelector(".section2").classList.remove("displaynone")
-         document.querySelector(".section3").classList.add("displaynone")         
+         document.querySelector(".section3").classList.add("displaynone")     
+         document.querySelector(".form").reset();    
          e.preventDefault(); 
 
       }
@@ -157,7 +172,7 @@ let cardholdernameq = cardholdername.value
       // }
       function isAlphabet(str){
          // let  char = str.split(" ");
-       let letters = /^[A-Za-z]+$/;
+       let letters = /^[A-Za-z ]*$/;
        if(str.match(letters))
          {
           return true;
