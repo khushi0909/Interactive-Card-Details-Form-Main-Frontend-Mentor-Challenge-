@@ -8,3 +8,6 @@ cvc validation ,someone can enter more than four digits
 3)check how smalll grey lines in the backpart of the card is implemented 
 
 4)if i have used the backinage of he card then ho would i have created the input in that 
+5)https://www.geeksforgeeks.org/different-ways-to-access-html-elements-using-javascript/
+https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+https://www.c-sharpcorner.com/blogs/javascript-validation-using-key-code-and-regular-expression

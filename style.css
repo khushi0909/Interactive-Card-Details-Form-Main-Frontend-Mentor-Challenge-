@@ -241,3 +241,10 @@ color:white;
    color: white;
   
   }
+
+
+  .invalid ,.invalidatecvc ,.invalidname{
+
+    color: red;
+  }
+

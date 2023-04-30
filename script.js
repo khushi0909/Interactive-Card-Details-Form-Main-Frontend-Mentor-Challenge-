@@ -1,4 +1,15 @@
- document.getElementById("cardholdername").oninput = () =>{
+
+      let cardnumber = document.getElementById("cardnumber")
+      const cardnumber1 = document.getElementById("cardnumber1")
+      const cardnumber2 = document.getElementById("cardnumber2")
+      let cardnumber3= document.getElementById("cardnumber3")
+      let expyear = document.getElementById("expyear")
+      const cvcnum = document.getElementById("cvcnum")
+ const expmonth = document.getElementById("expmonth")
+ const cardholdername =document.getElementById("cardholdername")
+
+
+document.getElementById("cardholdername").oninput = () =>{
 
     document.getElementById("namemirror").value = document.getElementById("cardholdername").value;
  }
@@ -30,17 +41,131 @@
  }
  document.getElementById("cvcnum").oninput = () =>{
 
-    document.getElementById("cvcmirror").value = document.getElementById("cvcnum").value;
+    document.getElementById("cvcmirror").innerHTML = document.getElementById("cvcnum").value;
  }
 
- 
- function displayCompletePage(e){
 
-      console.log("sss")
-      document.querySelector(".section2").classList.add("displaynone")
-      document.querySelector(".section3").classList.remove("displaynone")         
+ document.querySelector(".form").addEventListener("input",(e)=> {
+   switch(e.target.id){
 
-      e.preventDefault(); 
+      case "cardnumber","cardnumber1","cardnumber2","cardnumber3","expmonth","expyear","cvcnum" :
+         checkNumber();
+         break;
+      
+         case "cardoldername":
+         checkNumber();
+         break;
+   }
 
- }
-      document.getElementById("confirmbutton").addEventListener("click", displayCompletePage)
+ })
+
+
+
+ function checkNumber(){
+
+   let num = cardnumber.value
+   // console.log(num)
+   let num1=cardnumber1.value
+   // console.log(num1)
+
+   let num2=cardnumber2.value
+   let num3=cardnumber3.value
+   let expmonthq = expmonth.value
+   let expyearq = expyear.value
+   let cvcnumq = expyear.value
+let cardholdernameq = cardholdername.value
+
+      if(!isNumber(num)|| !isNumber(num1) || !isNumber(num2) || !isNumber(num3)){
+
+               {
+
+                     document.querySelector(".invalid").innerHTML="Wrong format ,Should contain only numbers ";
+
+               } 
+               
+               return false;
+               }
+
+                        else if(!isNumber(expmonthq) || !isNumber(expyearq) || !isNumber(cvcnumq)){
+                        {
+
+                           document.querySelector(".invaliddatecvc").innerHTML="Wrong format ,Should contain only numbers ";
+                           
+
+                        }
+                        return false;
+                        }
+
+                        else if(!isAlphabet(cardholdernameq)){
+
+                                 document.querySelector(".invalidname").innerHTML = "Wrong Format,should contain alphabets only "
+                        }
+   
+    else 
+    {return true;}
+   }  
+
+
+   document.getElementById("confirmbutton").addEventListener("click", displayCompletePage)
+   function displayCompletePage(e){
+     e.preventDefault(); 
+  
+         //   let checkalphabet = isAlphabet();
+        const checknumber = checkNumber();
+        if(checknumber){
+           document.querySelector(".section2").classList.add("displaynone")
+           document.querySelector(".section3").classList.remove("displaynone")
+           document.querySelector(".invalid").classList.add("displaynone") 
+           document.querySelector(".invaliddatecvc").classList.add("displaynone") 
+           document.querySelector(".invalidname").classList.add("displaynone") 
+
+
+        }
+        return false;
+           
+  
+  
+   }
+
+
+   document.querySelector(".confirmbutton").addEventListener("click", displayPreviousPage,false)
+
+      
+      function displayPreviousPage(e){
+         document.querySelector(".section2").classList.remove("displaynone")
+         document.querySelector(".section3").classList.add("displaynone")         
+         e.preventDefault(); 
+
+      }
+
+      function isNumber(str){
+        let  char = str.split("");
+
+      // let char = str.toString().split("");
+
+        if(char.some((c)=> c.charCodeAt()<48 || c.charCodeAt()>57)) 
+         return false;
+         return true;
+      }
+      // else (return true;)
+
+
+      // function isAlphabet(str) {
+
+      //   let  char = str.split("");
+      //   return (/[a-zA-Z]/).test(char)
+      // }
+      function isAlphabet(str){
+         // let  char = str.split(" ");
+       let letters = /^[A-Za-z]+$/;
+       if(str.match(letters))
+         {
+          return true;
+         }
+       else
+         {
+         // alert("not valid format");
+         return false;
+         }
+      }
+
